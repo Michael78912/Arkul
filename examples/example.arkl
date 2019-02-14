@@ -1,0 +1,25 @@
+
+# command. starts with %, must match %identifier = expr
+%define Greeting "Hello"
+%metadata {charset: "utf-8", version: 0.1}
+%define Msg1 @load("examples\message1.txt")
+
+%import time
+
+html with ( lang = "en" ) {
+    head {
+        title {Greeting}
+    }
+    body {
+        h1 {Greeting}
+        p {
+            Msg12
+        }
+        p {
+            @load("examples\message2.txt")
+        }
+        p {
+            "Compiled at: " @asctime()
+        }
+    }
+}
